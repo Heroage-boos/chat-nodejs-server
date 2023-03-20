@@ -1,0 +1,10 @@
+# PHPStorm
+.idea
+.gitee
+.vscode
+.vscode/
+images/
+node_modules/
+logs/
+dist
+.env.production
