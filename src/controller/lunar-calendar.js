@@ -10,7 +10,6 @@ const reg = /(\d{4})-(\d{2})-(\d{2})/;
 app.get('/', check('date', '请输入格式正确的日期格式：yyyy-mm-dd').matches(reg), (req, res) => {
   // 获取报错的数据
   let err = validationResult(req);
-
   // 获取匹配的数据
   let allData = matchedData(req);
   if (!err.isEmpty()) {

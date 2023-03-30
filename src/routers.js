@@ -153,6 +153,7 @@ const arrRoutes = [
     path: '/api/24k/hot',
     component: './controller/24k/hot'
   },
+  //数据库图标管理
   {
     path: '/api/web-nav',
     component: './controller/web-nav'

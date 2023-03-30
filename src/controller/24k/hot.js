@@ -9,7 +9,7 @@ const request = require('../../utils/request.js');
  * @param {string}  req.query.type.require
  */
 app.get('/', function (req, res) {
-    console.log('req.query.type',req.query.type);
+  console.log('req.query.type', req.query.type);
   const type = parseInt(req.query.type) || 0;
   //100007微博热搜榜--0   100000百度热点--1  100012微信24h热文--2  100015知乎热榜--3  100020抖音热点榜--4
   const map = {

@@ -1,6 +1,9 @@
 const APISign = require('@/src/utils/api-sign');
 module.exports = function (req, res, next) {
   console.log(process.env.NODE_ENV);
+
+  console.log('req.path.indexOf',req.path,req.path.indexOf('api/'));
+
   // 对非API地址放行
   if (req.path.indexOf('api/') < 0) {
     return next();
