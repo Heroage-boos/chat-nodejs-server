@@ -158,6 +158,11 @@ const arrRoutes = [
     path: '/api/web-nav',
     component: './controller/web-nav'
   },
+  //网易云
+  {
+    path: '/api/wangyiyun',
+    component: './controller/wangyiyun/duanzi'
+  },
 
   {
     path: '*',

@@ -1,4 +1,3 @@
-const { Console } = require('console');
 let http = require('http');
 const querystring = require('query-string');
 
@@ -10,7 +9,6 @@ class Request {
     return new Promise(function (resolve, reject) {
       let body = '';
       let getReq = http.request(options, function (response) {
-        console.log('responseresponseresponse');
         response.on('data', function (chunk) {
           body += chunk;
         });
@@ -25,7 +23,6 @@ class Request {
     });
   }
   static httpGet(config) {
-    console.log('config',config)
     const header = config.headers || {};
     let options = {
       host: config.host,
@@ -36,7 +33,7 @@ class Request {
       headers: {
         // 'Content-Type': 'application/json',
         'User-Agent':
-          'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36'
       }
     };
     options.headers = Object.assign({}, options.headers, header);
@@ -46,6 +43,7 @@ class Request {
       http = require('https');
       options.port = 443;
     }
+    console.log('this.PromiseData(options)',this.PromiseData(options));
     return this.PromiseData(options);
   }
 
@@ -100,7 +98,7 @@ class Request {
     console.log(headers);
     // data = querystring.stringify(data);
     console.log('---------httpPost---------------');
-    console.log(data);
+    console.log('data',data);
     let options = {
       host: host,
       port: '80',
@@ -122,7 +120,7 @@ class Request {
       http = require('https');
       options.port = 443;
     }
-    console.log(options);
+    console.log('status',status);
     return this.PromiseData(options);
   }
 }

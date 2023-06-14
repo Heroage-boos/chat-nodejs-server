@@ -24,7 +24,7 @@ async function WebNavQuery(req, res) {
   };
   console.log('datatata', data);
   if (result.rows) {
-    res.API(data);
+     res.API(data);
   }
 }
 module.exports = WebNavQuery;

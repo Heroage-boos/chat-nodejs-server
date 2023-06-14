@@ -9,5 +9,6 @@ const app = require('express')();
  */
 app.get('/', async function (req, res) {
   await query(req, res);
+  console.log("res", res)
 });
 module.exports = app;
