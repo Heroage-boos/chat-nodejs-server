@@ -11,10 +11,10 @@ const sequelize = new Sequelize(process.env.database, process.env.username, proc
 sequelize
   .authenticate()
   .then(function () {
-    console.log('Database connection has been established successfully.');
+    console.log('数据库连接成功!');
   })
   .catch(function (err) {
-    console.log('Unable to connect to the database:', err);
+    console.log('数据库连接失败!', err);
   });
 
 module.exports = sequelize;

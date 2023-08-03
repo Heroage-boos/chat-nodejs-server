@@ -17,6 +17,9 @@ const webNav = orm.define(
     },
     web_img: {
       type: DataTypes.STRING,
+    },
+    web_link_label: {
+      type: DataTypes.STRING,
     }
   },
   {

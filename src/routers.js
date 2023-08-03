@@ -163,7 +163,10 @@ const arrRoutes = [
     path: '/api/wangyiyun',
     component: './controller/wangyiyun/duanzi'
   },
-
+  {
+    path: '/api/chat_nav_login',
+    component: './controller/chat_nav/login'
+  },
   {
     path: '*',
     component: './controller/web/404'
