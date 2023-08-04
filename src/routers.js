@@ -167,6 +167,11 @@ const arrRoutes = [
     path: '/api/chat_nav_login',
     component: './controller/chat_nav/login'
   },
+  //同步知乎内容
+  {
+    path: '/api/dataManange/zhihu_content',
+    component: './controller/crawling/zhihu/index.js'
+  },
   {
     path: '*',
     component: './controller/web/404'
