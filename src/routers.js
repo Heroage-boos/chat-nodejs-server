@@ -172,6 +172,11 @@ const arrRoutes = [
     path: '/api/dataManange/zhihu_content',
     component: './controller/crawling/zhihu/index.js'
   },
+  //获取知乎内容
+  {
+    path: '/api/dataManage/select_zhihu_content',
+    component: './controller/crawling/zhihu/selectZhiHuContent.js'
+  },
   {
     path: '*',
     component: './controller/web/404'

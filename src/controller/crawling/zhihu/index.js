@@ -1,34 +1,8 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 const app = require('express')();
-
-const ORM = require("../../../config/orm")
-const { DataTypes } = require("sequelize")
+const zhihuModel=require("@/src/models/zhihu/zhihu-content-orm")
 const fs = require("fs");
-const { json } = require('body-parser');
-
-const zhihuModel = ORM.define(
-    "zhihu_content",
-    {
-        zhihu_content_no: {
-            type: DataTypes.INTEGER,
-        },
-        zhihu_content_title: {
-            type: DataTypes.STRING,
-            unique: true // 设置链接字段为唯一，用于防止重复爬取
-        },
-        zhihu_content_content: {
-            type: DataTypes.STRING
-        },
-        zhihu_content_id: {
-            type: DataTypes.STRING
-        },
-
-    },
-    {
-        tableName: "zhihu_content"
-    }
-)
 
 async function zhihuCreateOrm(data) {
      await zhihuModel.sync();
@@ -51,7 +25,6 @@ async function zhihuCreateOrm(data) {
     return "数据同步成功!"
     // console.log("数据已同步至数据库！")
 }
-
 
 //爬取网页信息
 async function crawlAndFilter(url) {
@@ -85,7 +58,6 @@ async function crawlAndFilter(url) {
         console.error(error);
     }
 }
-
 
 app.get('/', function (req, res) {
     console.log('req, res', req, res);
